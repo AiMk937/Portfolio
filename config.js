@@ -5,7 +5,7 @@
    HOW TO CHANGE:
    - Text between quotes "like this".
    - Lists are [like, this].
-   - Don’t delete commas or braces.
+   - Don't delete commas or braces.
    ========================================================== */
 
 const SITE = {
@@ -15,7 +15,7 @@ const SITE = {
   tagline: "Building intelligent systems that combine AI, data, and design to solve real-world problems.",
   location: "Mumbai, India",
   email: "aimaanjkhaan@gmail.com",
-  ctaPrimary: { text: "Download Resume", link: "Resume_Aimaan_Khan_J.pdf" },
+  ctaPrimary: { text: "Download Resume", link: "assets/Resume_Aimaan_Khan_J.pdf" },
   ctaSecondary: { text: "Get in touch", link: "#contact" },
 
   // Top navigation (in order)
@@ -35,7 +35,7 @@ const SITE = {
   // About
   about: {
     title: "About",
-    intro: "I’m a passionate AI and software engineer who loves building impactful products that merge research, data, and user experience. My work spans AI modeling, full-stack development, IoT systems, and applied machine learning.",
+    intro: "I'm a passionate AI and software engineer who loves building impactful products that merge research, data, and user experience. My work spans AI modeling, full-stack development, IoT systems, and applied machine learning.",
     bullets: [
       "Hands-on experience with AI, data analysis, and IoT integrations",
       "End-to-end product development — from backend to predictive modeling",
@@ -47,7 +47,7 @@ const SITE = {
   // Experience (latest first)
   experience: [
     {
-      title: "Python Developer Intern",
+      title: "Intern - Python Developer",
       org: "BeamOptics Scientific Pvt. Ltd.",
       period: "Jul 2025 — Oct 2025",
       points: [
@@ -91,7 +91,7 @@ const SITE = {
     {
       name: "AI Timetable Scheduler",
       blurb: "Node.js + MongoDB scheduling engine with NLP-based natural language timetable editing and conflict-free allocation.",
-      link: "https://github.com/AiMk937",
+      link: "https://github.com/AiMk937/timetable-scheduler",
       tags: ["Node.js", "MongoDB", "Express", "AI", "NLP"]
     },
     {
@@ -103,7 +103,7 @@ const SITE = {
     {
       name: "Toxic Comment Detector",
       blurb: "Flask-based web app that classifies online comments into toxicity levels using TF-IDF and Logistic Regression.",
-      link: "https://github.com/AiMk937",
+      link: "https://github.com/AiMk937/toxic-comment-detector",
       tags: ["Python", "Flask", "NLP", "Logistic Regression"]
     },
     {
@@ -131,13 +131,17 @@ const SITE = {
       detail: "Graduated with a GPA of 7.79; specialized in ML, Systems, and Cybersecurity."
     },
     { school: "RIMS International Junior College", period: "2020", detail: "Higher Secondary (HSC)" },
-    { school: "St. Mary’s High School", period: "2017", detail: "Secondary School (SSC)" }
+    { school: "St. Mary's High School", period: "2017", detail: "Secondary School (SSC)" }
   ],
 
   // Certificates
   certs: [
     { title: "cloudyBoss cBX84 AI Accreditation", by: "cloudyBoss Pty Ltd" },
-    { title: "Deep Learning Specialization", by: "deeplearning.ai" }
+    { title: "Demystifying Networking", by: "NPTEL - SWAYAM" },
+    { title: "HTML, CSS & JavaScript for Web Development", by: "John Hopkins University" },
+    { title: "AWS Academy Graduate - AWS Academy Cloud Foundations", by: "AWS" },
+    { title: "AI/ML workshop", by: "Techobyte at IITB" },
+    { title: "Google AI essentials", by: "Google" }
   ],
 
   // Publications
@@ -156,12 +160,11 @@ const SITE = {
 
   // Contact
   contact: {
-    blurb: "Let’s collaborate to create meaningful, AI-powered products that make a difference.",
+    blurb: "Let's collaborate to create meaningful, AI-powered products that make a difference.",
     links: [
       { label: "Email", href: "mailto:aimaanjkhaan@gmail.com" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/aimaan-khan" },
-      { label: "GitHub", href: "https://github.com/AiMk937" },
-      { label: "Portfolio", href: "https://aimk937.github.io/Portfolio1.1" }
+      { label: "GitHub", href: "https://github.com/AiMk937" }
     ]
   }
 };
