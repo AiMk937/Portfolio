@@ -205,6 +205,7 @@ html[data-theme="light"] .site-header { background: rgba(255,255,255,0.8); }
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 13px; cursor: pointer;
+  color: aliceblue;
 }
 .filter-chip.active {
   background: linear-gradient(135deg, var(--brand1), var(--brand2));
