@@ -109,7 +109,7 @@ const SITE = {
     {
       name: "IoT Vehicle Tracker",
       blurb: "GPS-based IoT dashboard for monitoring vehicle speed and location in real time.",
-      link: "https://github.com/AiMk937",
+      link: "https://github.com/Mariyum008/SmartTracker-IoT",
       tags: ["IoT", "GPS", "Embedded Systems", "Python"]
     }
   ],

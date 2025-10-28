@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aimaan Khan — Portfolio</title>
   <meta name="description" content="AI Engineer & Full-Stack Developer Portfolio" />
+  <!-- NEW: SEO -->
+  <meta name="keywords" content="Aimaan Khan, AI Engineer, Full-Stack Developer, Portfolio, ML, IoT" />
+  <meta name="author" content="Aimaan Khan" />
+  <!-- NEW: Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aimaan Khan — AI Engineer & Full-Stack Developer" />
+  <meta property="og:description" content="Building intelligent systems that combine AI, data, and design." />
+  <meta property="og:image" content="assets/profile.png" />
+  <meta property="og:url" content="https://aimk937.github.io/Portfolio1.1" />
+  <!-- NEW: Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Aimaan Khan — AI Engineer & Full-Stack Developer" />
+  <meta name="twitter:description" content="Building intelligent systems that combine AI, data, and design." />
+  <meta name="twitter:image" content="assets/profile.png" />
+  <meta name="theme-color" content="#050509" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Icons (optional for tech tags) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
@@ -17,18 +34,39 @@
 
 <body>
   <!-- ===== Header ===== -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="wrap">
-      <a class="brand" href="#">
-        <img src="assets/profile.png" alt="Aimaan Khan Logo" class="brand-icon" />
+      <a class="brand" href="#" aria-label="Home">
+        <span class="brand-avatar">
+          <img src="assets/profile.png" alt="Portrait of Aimaan Khan" class="brand-icon" />
+          <span class="avatar-ring" aria-hidden="true"></span>
+        </span>
         <span id="brand-name">Aimaan Khan</span>
       </a>
-      <nav id="site-nav"><ul id="navList"></ul></nav>
+
+      <nav id="site-nav" aria-label="Primary">
+        <ul id="navList"></ul>
+      </nav>
+
+      <!-- NEW: Theme Toggle -->
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <!-- NEW: Mobile Menu Toggle -->
+      <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
+
+    <!-- NEW: Mobile Nav container -->
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile">
+      <ul id="mobileNavList"></ul>
+    </nav>
   </header>
 
   <!-- Background FX -->
-  <div class="bg-orbs"></div>
+  <div class="bg-orbs" aria-hidden="true"></div>
 
   <!-- ===== Dynamic Content ===== -->
   <main id="content">
@@ -37,13 +75,16 @@
   </main>
 
   <!-- ===== Footer ===== -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="wrap">
       <p>© <span id="year"></span> Aimaan Khan. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="config.js"></script>
-  <script src="app.js"></script>
+  <noscript>This site requires JavaScript to render sections.</noscript>
+
+  <!-- Scripts (deferred for performance) -->
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
