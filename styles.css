@@ -19,7 +19,13 @@ html[data-theme="light"] {
   --border: rgba(0,0,0,0.12);
 }
 
-html, body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); scroll-behavior: smooth; }
+html, body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
 
 /* ===== Global Layout ===== */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
@@ -205,11 +211,13 @@ html[data-theme="light"] .site-header { background: rgba(255,255,255,0.8); }
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 13px; cursor: pointer;
-  color: aliceblue;
+  color: var(--text);
+  transition: all 0.3s ease;
 }
+.filter-chip:hover { background: rgba(255,255,255,0.1); }
 .filter-chip.active {
   background: linear-gradient(135deg, var(--brand1), var(--brand2));
-  color: #0b0d15; font-weight: 800;
+  color: #fff; font-weight: 800;
 }
 
 .projects-grid {
@@ -275,6 +283,56 @@ html[data-theme="light"] .contact-panel p { color: #0c0c16; }
   border-radius: 999px; padding: 10px 18px; transition: all 0.3s ease; box-shadow: 0 0 18px rgba(124,92,255,0.3);
 }
 .contact-link:hover { transform: translateY(-3px); box-shadow: 0 0 28px rgba(124,92,255,0.6); }
+
+/* === CERTIFICATE MODAL === */
+.cert-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.cert-modal.open { display: flex; }
+
+.cert-modal-content {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  max-width: 90vw;
+  max-height: 85vh;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 0 40px rgba(124,92,255,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+#certImage {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 10px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+#certImage:hover { transform: scale(1.02); }
+
+.close-btn {
+  position: absolute;
+  top: 6px; right: 12px;
+  font-size: 28px;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+}
+.close-btn:hover { color: var(--brand2); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* === Small screens === */
 @media (max-width: 900px) {

@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul>${S.about.bullets.map(x => `<li>${x}</li>`).join("")}</ul>
     </div>`;
 
-  // Experience (grid)
+  // Experience
   const exp = `
     <div class="grid">
       ${S.experience.map(e => `
@@ -136,14 +136,23 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`).join("")}
     </div>`;
 
-  // Certificates (NEW: was in config but not rendered)
+  // Certificates (now with "View Certificate" button)
   const certs = `
     <div class="grid">
-      ${ (S.certs || []).map(c => `
+      ${(S.certs || []).map(c => `
         <div class="card reveal">
           <h3>${c.title}</h3>
           <p><small>${c.by || ""}</small></p>
+          <button class="btn btn-primary view-cert" data-img="${c.link}" aria-label="View certificate for ${c.title}">
+            View Certificate
+          </button>
         </div>`).join("")}
+    </div>
+    <div id="certModal" class="cert-modal" role="dialog" aria-modal="true">
+      <div class="cert-modal-content">
+        <span class="close-btn" id="closeCert">&times;</span>
+        <img id="certImage" alt="Certificate Image" />
+      </div>
     </div>`;
 
   // Publications
@@ -173,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     section("projects", "Projects", projects),
     section("tech", "Tech Stack", tech),
     section("education", "Education", edu),
-    section("certs", "Certificates", certs),  // NEW
+    section("certs", "Certificates", certs),
     section("pubs", "Publications", pubs),
     section("contact", "Contact", contact)
   ].join("");
@@ -190,9 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const filter = btn.getAttribute("data-filter");
       projectCards.forEach(card => {
-        if (filter === "*") {
-          card.style.display = "";
-        } else {
+        if (filter === "*") card.style.display = "";
+        else {
           const tags = card.getAttribute("data-tags").split(",");
           card.style.display = tags.includes(filter) ? "" : "none";
         }
@@ -224,10 +232,30 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.forEach(a => {
           const match = a.getAttribute("data-id") === id;
           a.classList.toggle("active", match);
-          if (match) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+          if (match) a.setAttribute("aria-current", "page");
+          else a.removeAttribute("aria-current");
         });
       }
     });
   }, { rootMargin: "-40% 0px -55% 0px" });
   sections.forEach(sec => activeObs.observe(sec));
+
+  // ====== CERTIFICATE MODAL LOGIC ======
+  const modal = document.getElementById("certModal");
+  const modalImg = document.getElementById("certImage");
+  const closeBtn = document.getElementById("closeCert");
+
+  document.body.addEventListener("click", (e) => {
+    const btn = e.target.closest(".view-cert");
+    if (btn) {
+      const src = btn.getAttribute("data-img");
+      modalImg.src = src;
+      modal.classList.add("open");
+    }
+  });
+
+  closeBtn.addEventListener("click", () => modal.classList.remove("open"));
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.remove("open");
+  });
 });
