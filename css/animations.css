@@ -1,0 +1,32 @@
+/* Scroll-triggered reveal — strong ease-out fade + rise + slight scale,
+   staggered per item via inline --delay set by the renderers. */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.98);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--delay, 0s);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* Scroll cue at the foot of the splash, inviting the next page */
+@keyframes scroll-cue-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+  50% { transform: translateX(-50%) translateY(6px); opacity: 1; }
+}
+#hero { position: relative; }
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: var(--sp-5);
+  z-index: 1;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 1.1rem;
+  animation: scroll-cue-bounce 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .scroll-cue { animation: none; }
+}

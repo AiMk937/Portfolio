@@ -1,0 +1,61 @@
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--sp-4); }
+.wrap-wide { max-width: var(--maxw-wide); margin: 0 auto; padding: 0 var(--sp-4); }
+
+/* Free-flowing scroll — no hard snapping. Sections still fill the
+   viewport height for pacing, but scrolling is smooth and continuous;
+   scroll-padding keeps anchor jumps landing below the sticky header. */
+html { scroll-padding-top: var(--header-h); }
+
+#hero,
+.section {
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--sp-6) 0;
+}
+
+.section .wrap { max-width: var(--maxw); }
+
+/* About and Contact keep the profile card / prose readable; Contact
+   stays narrow, About goes wide to fit its two-column profile layout.
+   Everything else is structured (grids/lists) and reads better using
+   the full width instead of floating in a narrow column. */
+#hero .wrap,
+#about .wrap,
+#experience .wrap,
+#projects .wrap,
+#tech .wrap,
+#education .wrap,
+#certificates .wrap,
+#publications .wrap { max-width: var(--maxw-wide); }
+
+/* Alternating tone stands in for hairline dividers between pages */
+.section:nth-of-type(even) { background: var(--ink); }
+
+.section-title {
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+  margin-bottom: var(--sp-5);
+}
+
+.entry-list { display: flex; flex-direction: column; gap: var(--sp-6); }
+
+.entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--sp-5);
+}
+.entry-period {
+  font-family: var(--font-display);
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-top: 0.2em;
+}
+.entry-body { max-width: 68ch; }
+.entry-org { color: var(--muted); font-weight: 500; }
+.entry-detail { color: var(--muted); margin-top: -6px; }
+
+@media (max-width: 640px) {
+  .entry { grid-template-columns: 1fr; gap: var(--sp-1); }
+  .entry-period { padding-top: 0; }
+}

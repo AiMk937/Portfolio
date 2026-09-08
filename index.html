@@ -5,30 +5,38 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aimaan Khan — Portfolio</title>
   <meta name="description" content="AI Engineer & Full-Stack Developer Portfolio" />
-  <!-- NEW: SEO -->
   <meta name="keywords" content="Aimaan Khan, AI Engineer, Full-Stack Developer, Portfolio, ML, IoT" />
   <meta name="author" content="Aimaan Khan" />
-  <!-- NEW: Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Aimaan Khan — AI Engineer & Full-Stack Developer" />
   <meta property="og:description" content="Building intelligent systems that combine AI, data, and design." />
   <meta property="og:image" content="assets/profile.png" />
-  <meta property="og:url" content="https://aimk937.github.io/Portfolio1.1" />
-  <!-- NEW: Twitter -->
+  <meta property="og:url" content="https://aimk937.github.io/Portfolio/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Aimaan Khan — AI Engineer & Full-Stack Developer" />
   <meta name="twitter:description" content="Building intelligent systems that combine AI, data, and design." />
   <meta name="twitter:image" content="assets/profile.png" />
-  <meta name="theme-color" content="#050509" />
+  <meta name="theme-color" content="#07070c" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <!-- Icons (optional for tech tags) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Styles — split by concern; edit css/variables.css to reskin colors/type -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/tech.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/certificates.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
   <link rel="icon" type="image/png" href="assets/profile.png" />
 </head>
 
@@ -38,8 +46,8 @@
     <div class="wrap">
       <a class="brand" href="#" aria-label="Home">
         <span class="brand-avatar">
-          <img src="assets/profile.png" alt="Portrait of Aimaan Khan" class="brand-icon" />
-          <span class="avatar-ring" aria-hidden="true"></span>
+          <img src="assets/profile.png" alt="Portrait of Aimaan Khan" class="brand-icon avatar-img"
+               data-fallback-class="brand-icon brand-icon-fallback" />
         </span>
         <span id="brand-name">Aimaan Khan</span>
       </a>
@@ -48,31 +56,28 @@
         <ul id="navList"></ul>
       </nav>
 
-      <!-- NEW: Theme Toggle -->
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
         <i class="fa-solid fa-moon"></i>
       </button>
 
-      <!-- NEW: Mobile Menu Toggle -->
       <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
     </div>
 
-    <!-- NEW: Mobile Nav container -->
     <nav id="mobileNav" class="mobile-nav" aria-label="Mobile">
       <ul id="mobileNavList"></ul>
     </nav>
   </header>
 
-  <!-- Background FX -->
-  <div class="bg-orbs" aria-hidden="true"></div>
-
-  <!-- ===== Dynamic Content ===== -->
+  <!-- ===== Dynamic Content — built from data/*.js by js/main.js ===== -->
   <main id="content">
     <section id="hero" class="hero"></section>
     <div id="app"></div>
   </main>
+
+  <!-- Side dot-nav for jumping between sections; hidden on small screens -->
+  <nav id="pageDots" class="page-dots" aria-label="Section shortcuts"></nav>
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer" role="contentinfo">
@@ -83,8 +88,6 @@
 
   <noscript>This site requires JavaScript to render sections.</noscript>
 
-  <!-- Scripts (deferred for performance) -->
-  <script src="config.js" defer></script>
-  <script src="app.js" defer></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

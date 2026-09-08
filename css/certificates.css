@@ -1,0 +1,67 @@
+/* Explicit column counts per breakpoint, not auto-fit:
+   3 up on laptop/desktop, 2 up on tablet, plain text rows (no image) on phone. */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 1023px) {
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .cert-grid { grid-template-columns: 1fr; gap: var(--sp-2); }
+  .cert-thumb { display: none; }
+  .cert-card { flex-direction: row; align-items: center; padding: var(--sp-3); }
+  .cert-info { padding: 0; }
+}
+
+.cert-card {
+  text-align: left; cursor: pointer;
+  background: var(--ink); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 0; overflow: hidden;
+  color: var(--text); font-family: var(--font-body);
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cert-card:hover { border-color: var(--brand1); transform: translateY(-3px); }
+
+.cert-thumb {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg);
+}
+.cert-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cert-info {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: var(--sp-3);
+}
+.cert-title { font-weight: 600; font-size: 0.9rem; line-height: 1.3; }
+.cert-by { color: var(--muted); font-size: 0.78rem; }
+
+.cert-modal {
+  display: none;
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center; justify-content: center; padding: var(--sp-4);
+}
+.cert-modal.open { display: flex; }
+.cert-modal-content {
+  position: relative; max-width: 90vw; max-height: 90vh;
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-2);
+}
+.cert-modal-content img { max-height: 78vh; border-radius: var(--radius-sm); }
+.cert-caption { color: #fff; font-size: 0.9rem; }
+.close-btn {
+  position: absolute; top: -14px; right: -14px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #fff; color: #000; border: none; cursor: pointer;
+  font-size: 1.1rem; line-height: 1;
+}
