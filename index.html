@@ -1,93 +1,45 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aimaan Khan — Portfolio</title>
-  <meta name="description" content="AI Engineer & Full-Stack Developer Portfolio" />
-  <meta name="keywords" content="Aimaan Khan, AI Engineer, Full-Stack Developer, Portfolio, ML, IoT" />
-  <meta name="author" content="Aimaan Khan" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aimaan Khan — AI Engineer & Full-Stack Developer" />
-  <meta property="og:description" content="Building intelligent systems that combine AI, data, and design." />
-  <meta property="og:image" content="assets/profile.png" />
-  <meta property="og:url" content="https://aimk937.github.io/Portfolio/" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Aimaan Khan — AI Engineer & Full-Stack Developer" />
-  <meta name="twitter:description" content="Building intelligent systems that combine AI, data, and design." />
-  <meta name="twitter:image" content="assets/profile.png" />
-  <meta name="theme-color" content="#07070c" />
-
-  <!-- Fonts -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aimaan Khan - Portfolio</title>
+  <meta name="description" content="M.S. Applied Data Intelligence student at San José State University building ML systems for security, data and IoT. Two published papers, three internships.">
+  <meta name="author" content="Aimaan Khan">
+  <meta name="theme-color" content="#0a0b10">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aimaan Khan - Portfolio">
+  <meta property="og:description" content="M.S. Applied Data Intelligence student at San José State University building ML systems for security, data and IoT. Two published papers, three internships.">
+  <meta property="og:url" content="https://aimk937.github.io/Portfolio/">
+  <meta property="og:image" content="https://aimk937.github.io/Portfolio/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://aimk937.github.io/Portfolio/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Styles — split by concern; edit css/variables.css to reskin colors/type -->
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/profile.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/tech.css" />
-  <link rel="stylesheet" href="css/projects.css" />
-  <link rel="stylesheet" href="css/certificates.css" />
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-
-  <link rel="icon" type="image/png" href="assets/profile.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 </head>
-
-<body>
-  <!-- ===== Header ===== -->
-  <header class="site-header" role="banner">
-    <div class="wrap">
-      <a class="brand" href="#" aria-label="Home">
-        <span class="brand-avatar">
-          <img src="assets/profile.png" alt="Portrait of Aimaan Khan" class="brand-icon avatar-img"
-               data-fallback-class="brand-icon brand-icon-fallback" />
-        </span>
-        <span id="brand-name">Aimaan Khan</span>
-      </a>
-
-      <nav id="site-nav" aria-label="Primary">
-        <ul id="navList"></ul>
-      </nav>
-
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
-        <i class="fa-solid fa-moon"></i>
-      </button>
-
-      <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
+<body data-page="landing">
+  <main class="wrap landing">
+    <div class="hello">
+      <span id="hello-avatar"></span>
+      <h1>Hi, I'm <span class="grad">Aimaan Khan</span>.</h1>
+      <p class="lede">I build machine-learning systems that actually ship - from intrusion detection to Raspberry Pi lab machines. M.S. Applied Data Intelligence student at San José State University, with two published papers and three internships behind me.</p>
+      <div class="badges">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>San Jose, CA</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>M.S. @ SJSU</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg>ML · Data · Security · IoT</span>
+      </div>
     </div>
-
-    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile">
-      <ul id="mobileNavList"></ul>
-    </nav>
-  </header>
-
-  <!-- ===== Dynamic Content — built from data/*.js by js/main.js ===== -->
-  <main id="content">
-    <section id="hero" class="hero"></section>
-    <div id="app"></div>
+    <div class="picker">
+      <h2>First things first - who's visiting?</h2>
+      <div class="picker-grid" id="picker-grid"></div>
+      <p class="remembered" id="remembered"></p>
+    </div>
   </main>
-
-  <!-- Side dot-nav for jumping between sections; hidden on small screens -->
-  <nav id="pageDots" class="page-dots" aria-label="Section shortcuts"></nav>
-
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="wrap">
-      <p>© <span id="year"></span> Aimaan Khan. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <noscript>This site requires JavaScript to render sections.</noscript>
-
-  <script type="module" src="js/main.js"></script>
+  <noscript><div class="wrap" style="padding:40px 0">This page needs JavaScript. Aimaan Khan - M.S. Applied Data Intelligence at SJSU. Email <a href="mailto:aimaanjkhaan@gmail.com">aimaanjkhaan@gmail.com</a> · <a href="https://github.com/AiMk937">GitHub</a> · <a href="https://www.linkedin.com/in/aimaan-khan">LinkedIn</a></div></noscript>
 </body>
 </html>
